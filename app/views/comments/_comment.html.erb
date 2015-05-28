@@ -1,4 +1,10 @@
-<p><%= comment.author %> said:</p>
+<p><%=
+   if(comment.email.nil?)
+      comment.author
+   else
+      mail_to comment.email, comment.author
+   end
+   %> said:</p>
 
 <blockquote>
    <%= comment.body %>
